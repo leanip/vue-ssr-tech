@@ -30,7 +30,7 @@ const config = merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.styl/,
+        test: /\.styl(us)?$/,
         use: [
           'vue-style-loader',
           'css-loader',

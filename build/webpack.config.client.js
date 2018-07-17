@@ -33,7 +33,7 @@ if (isDev) {
     module: {
       rules: [
         {
-          test: /\.styl/,
+          test: /\.styl(us)?$/,
           use: [
             'vue-style-loader',
             'css-loader',
@@ -66,7 +66,7 @@ if (isDev) {
     module: {
       rules: [
         {
-          test: /\.styl/,
+          test: /\.styl(us)?$/,
           use: ExtractPlugin.extract({
             fallback: 'vue-style-loader',
             use: [
