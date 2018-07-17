@@ -2,7 +2,13 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <todo></todo>
+    <p><router-link to='/app/test?a=123&b=4567'>test</router-link></p>
+    <p><router-link :to='{name: "App"}'>app</router-link></p>
+    <p><router-link to='/login'>login</router-link></p>
+    <p><router-link to='/login/exact'>login exact</router-link></p>
+    <transition name='fade'>
+      <router-view/>
+    </transition>
     <Footer></Footer>
   </div>
 </template>
@@ -17,6 +23,9 @@ export default {
     Header,
     Footer,
     Todo
+  },
+  mounted () {
+    console.log(this.$route)
   }
 }
 </script>
@@ -28,6 +37,7 @@ export default {
   right 0
   top 0
   bottom 0
+  padding-left 50px
 }
 #cover{
   position absolute
