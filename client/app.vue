@@ -2,7 +2,12 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
+    <p>{{fullName}}</p>
     <p>{{count}}</p>
+    <p>slogan: {{biaoyu}}</p>
+    <p>
+      <button @click='handleSlogan'>切换</button>
+    </p>
     <p><router-link to='/app/test?a=123&b=4567'>test</router-link></p>
     <p><router-link :to='{name: "App"}'>app</router-link></p>
     <p><router-link to='/login'>login</router-link></p>
@@ -15,6 +20,12 @@
 </template>
 
 <script>
+import {
+  mapState,
+  mapGetters,
+  mapMutations,
+  mapActions
+} from 'vuex'
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
@@ -28,14 +39,42 @@ export default {
   mounted () {
     // console.log(this.$route)
     let i = 1
+    // setInterval(() => {
+    //   this.$store.commit('updateCount', { num: i++ })
+    // }, 1000)
+
     setInterval(() => {
-      this.$store.commit('updateCount', i++)
+      this.updateCount({num: i++})
     }, 1000)
+
+    // this.updateCount({num: 123})
+
+    this.updateCountAsync({
+      num: 234,
+      time: 1000
+    })
+
+    console.log(this.slogan1)
+  },
+  methods: {
+    ...mapActions(['updateCountAsync', 'updateSloganAsync']),
+    ...mapMutations(['updateCount']),
+    handleSlogan () {
+      this.updateSloganAsync({
+        slogan: '我用Vue'
+      })
+    }
   },
   computed: {
-    count () {
-      return this.$store.state.count
-    }
+    // count () {
+    //   return this.$store.state.count
+    // },
+    // fullName () {
+    //   return this.$store.getters.fullName
+    // }
+    // ...mapState(['count']),
+    ...mapState(['count', 'biaoyu']),
+    ...mapGetters(['fullName'])
   }
 }
 </script>

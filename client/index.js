@@ -14,6 +14,10 @@ Vue.use(Vuex)
 const router = new CreateRouter()
 const store = new CreateStore()
 
+store.watch(state => state.count + 1, newCount => {
+  console.log('new count watched: ', newCount)
+})
+
 router.beforeEach((to, from, next) => {
   console.log('router before')
   next()
