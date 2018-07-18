@@ -2,6 +2,7 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
+    <p>{{count}}</p>
     <p><router-link to='/app/test?a=123&b=4567'>test</router-link></p>
     <p><router-link :to='{name: "App"}'>app</router-link></p>
     <p><router-link to='/login'>login</router-link></p>
@@ -16,16 +17,25 @@
 <script>
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
-import Todo from './views/todo/todo.vue'
+// import Todo from './views/todo/todo.vue'
 
 export default {
   components: {
     Header,
-    Footer,
-    Todo
+    Footer
+    // ,Todo
   },
   mounted () {
-    console.log(this.$route)
+    // console.log(this.$route)
+    let i = 1
+    setInterval(() => {
+      this.$store.commit('updateCount', i++)
+    }, 1000)
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
   }
 }
 </script>

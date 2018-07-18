@@ -1,5 +1,5 @@
-import Todo from '../views/todo/todo.vue'
-import Login from '../views/login/login.vue'
+// import Todo from '../views/todo/todo.vue'
+// import Login from '../views/login/login.vue'
 
 export default [
   {
@@ -13,21 +13,25 @@ export default [
     //   id: '7890'
     // },
     props: route => ({ id: route.query.b }), // eslint-disable-line // 传一个方法
-    component: Todo,
+    component: () => import('../views/todo/todo.vue'),
     name: 'App',
     children: [
       {
         path: 'test',
-        component: Login
+        component: () => import('../views/login/login.vue')
       }
-    ]
+    ],
+    beforeEnter (to, from, next) {
+      console.log('app routes before enter')
+      next()
+    }
   },
   {
     path: '/login',
-    component: Login
+    component: () => import('../views/login/login.vue')
   },
   {
     path: '/login/exact',
-    component: Login
+    component: () => import('../views/login/login.vue')
   }
 ]
