@@ -7,7 +7,8 @@ export default [
     redirect: '/app'
   },
   {
-    path: '/app/:id',
+    // path: '/app/:id',
+    path: '/app',
     // props: true, // true: 会把:id 作为props传递给Todo组件
     // props: { // 传一个对象
     //   id: '7890'

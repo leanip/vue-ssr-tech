@@ -11,7 +11,7 @@ const config = merge(baseConfig, {
   devtool: 'source-map',
   output: {
     libraryTarget: 'commonjs2',
-    fillname: 'server-entry.js',
+    filename: 'server-entry.js',
     path: path.join(__dirname, '../server-build')
   },
   externals: Object.keys(require('../package.json').dependencies),

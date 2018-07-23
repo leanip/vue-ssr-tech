@@ -4,7 +4,7 @@ import routes from './routes'
 export default () => new Router({
   routes,
   mode: 'history',
-  base: '/base/',
+  // base: '/base/',
   linkActiveClass: 'active',
   linkExactActiveClass: 'exact-active',
   scrollBehavior (to, from, savedPosition) {
