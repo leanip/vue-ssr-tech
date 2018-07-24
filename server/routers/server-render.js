@@ -3,6 +3,7 @@ const ejs = require('ejs')
 module.exports = async (ctx, renderer, template) => {
   ctx.headers['Content-Type'] = 'text/html'
 
+  // 服务端渲染时传入Vue-server-renderer里
   const context = { url: ctx.path }
 
   try {
@@ -16,7 +17,7 @@ module.exports = async (ctx, renderer, template) => {
 
     ctx.body = html
   } catch (err) {
-    console.log('render err: ', err.message)
+    console.log('server render err: ', err)
     throw err
   }
 }

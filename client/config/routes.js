@@ -9,11 +9,11 @@ export default [
   {
     // path: '/app/:id',
     path: '/app',
-    // props: true, // true: 会把:id 作为props传递给Todo组件
+    props: true, // true: 会把:id 作为props传递给Todo组件
     // props: { // 传一个对象
     //   id: '7890'
     // },
-    props: route => ({ id: route.query.b }), // eslint-disable-line // 传一个方法
+    // props: route => ({ id: route.query.b }), // eslint-disable-line // 传一个方法
     component: () => import('../views/todo/todo.vue'),
     name: 'App',
     children: [

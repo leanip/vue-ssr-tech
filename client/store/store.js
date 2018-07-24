@@ -21,8 +21,6 @@ export default () => {
     actions
   })
 
-  // console.log('hot module: ', module.hot)
-
   if (module.hot) {
     module.hot.accept([
       './state',
@@ -42,7 +40,7 @@ export default () => {
         actions: newActions
       })
     })
-
-    return store
   }
+
+  return store
 }

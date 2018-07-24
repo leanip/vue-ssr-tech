@@ -28,7 +28,7 @@ serverCompiler.watch({}, (err, stats) => {
   )
 
   bundle = JSON.parse(mfs.readFileSync(bundlePath, 'utf-8'))
-  console.log('new bundle generated')
+  console.log(' =================================== new bundle generated =================================== ')
 })
 
 const handleSSR = async ctx => {
@@ -48,10 +48,11 @@ const handleSSR = async ctx => {
     'utf-8'
   )
 
-  const renderer = VueServerRenderer.createBundleRenderer(bundle, {
-    inject: false,
-    clientManifest
-  })
+  const renderer = VueServerRenderer
+    .createBundleRenderer(bundle, {
+      inject: false,
+      clientManifest
+    })
 
   await serverRender(ctx, renderer, template)
 }
