@@ -31,6 +31,9 @@ import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
 
 export default {
+  metaInfo: {
+    title: 'Charlie\'s todo list'
+  },
   components: {
     Header,
     Footer

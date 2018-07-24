@@ -13,6 +13,8 @@ export default context => {
         return reject(new Error('no component matched'))
       }
 
+      context.meta = app.$meta()
+
       resolve(app)
     })
   })
