@@ -10,6 +10,13 @@
         type: String,
         default: 'tab'
       }
+      // panes: {
+      //   type: Array,
+      //   required
+      // }
+    },
+    mounted () {
+      this.$parent.panes.push(this)
     },
     computed: {
       active () {
