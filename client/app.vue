@@ -5,9 +5,12 @@
     <p>{{fullName}} ---- {{count}}</p>
     <p><button @click='handleSlogan'>切换</button> slogan: {{biaoyu}}</p>
     <!-- <p><router-link to='/app/test?a=123&b=4567'>test</router-link></p> -->
-    <p><router-link :to='{name: "App"}'>app</router-link></p>
-    <p><router-link to='/login'>login</router-link></p>
+    <p>
+      <router-link :to='{name: "App"}'>app</router-link> |
+      <router-link to='/login'>login</router-link>
+    </p>
     <!-- <p><router-link to='/login/exact'>login exact</router-link></p> -->
+
     <transition name='fade'>
       <router-view/>
     </transition>
