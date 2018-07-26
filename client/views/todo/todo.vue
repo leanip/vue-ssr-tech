@@ -32,17 +32,17 @@ export default {
     title: 'todo page'
   },
   beforeRouteEnter (to, from, next) {
-    console.log('todo before enter')
+    // console.log('todo before enter')
     next(vm => {
-      console.log('this is vm.id ', vm.id)
+      // console.log('this is vm.id ', vm.id)
     })
   },
   beforeRouteUpdate (to, from, next) {
-    console.log('todo before update')
+    // console.log('todo before update')
     next()
   },
   beforeRouteLeave (to, from, next) {
-    console.log('todo before leave')
+    // console.log('todo before leave')
     next()
   },
   props: ['id'],
@@ -53,7 +53,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.id)
+    // console.log(this.id)
   },
   components: {
     Item,

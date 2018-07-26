@@ -23,7 +23,7 @@ export default [
       }
     ],
     beforeEnter (to, from, next) {
-      console.log('app routes before enter')
+      // console.log('app routes before enter')
       next()
     }
   },
