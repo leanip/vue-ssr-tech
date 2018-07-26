@@ -7,6 +7,11 @@
         required: true
       }
     },
+    methods: {
+      onChange (value) {
+        this.$emit('changeTabValue', value)
+      }
+    },
     render () {
       return (
         <div class='tabs'>
@@ -21,8 +26,10 @@
 
 <style lang="stylus" scoped>
 .tabs-header
+  display flex
+  list-style none
   margin 0
   padding 0
-  border-bottom 1px solid #ddd
+  border-bottom 2px solid #ededed
 </style>
 

@@ -11,6 +11,16 @@
         default: 'tab'
       }
     },
+    computed: {
+      active () {
+        return this.$parent.value === this.index
+      }
+    },
+    methods: {
+      handleClick () {
+        this.$parent.onChange(this.index)
+      }
+    },
     render () {
       const tab = this.$slots.label || <span>{this.label}</span>
       const className = {
@@ -18,7 +28,7 @@
         active: this.active
       }
       return (
-        <li class={className}>
+        <li class={className} on-click={this.handleClick}>
           {tab}
         </li>
       )
