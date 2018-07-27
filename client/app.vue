@@ -2,31 +2,31 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <p>{{fullName}} ---- {{count}}</p>
-    <p><button @click='handleSlogan'>切换</button> slogan: {{biaoyu}}</p>
+    <!-- <p>{{fullName}} ---- {{count}}</p>
+    <p><button @click='handleSlogan'>切换</button> slogan: {{biaoyu}}</p> -->
     <!-- <p><router-link to='/app/test?a=123&b=4567'>test</router-link></p> -->
-    <p>
+    <!-- <p>
       <router-link :to='{name: "App"}'>app</router-link> |
       <router-link to='/login'>login</router-link>
-    </p>
+    </p> -->
     <!-- <p><router-link to='/login/exact'>login exact</router-link></p> -->
 
     <transition name='fade'>
       <router-view/>
     </transition>
-    <button @click='notify'>click me</button>
+    <!-- <button @click='notify'>click me</button> -->
     <!-- <notification content='note notify'/> -->
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import {
-  mapState,
-  mapGetters,
-  mapMutations,
-  mapActions
-} from 'vuex'
+// import {
+//   mapState,
+//   mapGetters,
+//   mapMutations,
+//   mapActions
+// } from 'vuex'
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
@@ -65,13 +65,13 @@ export default {
     // console.log(this.slogan1)
   },
   methods: {
-    ...mapActions(['updateCountAsync', 'updateSloganAsync']),
-    ...mapMutations(['updateCount']),
-    handleSlogan () {
-      this.updateSloganAsync({
-        slogan: '我用Vue'
-      })
-    },
+    // ...mapActions(['updateCountAsync', 'updateSloganAsync']),
+    // ...mapMutations(['updateCount']),
+    // handleSlogan () {
+    //   this.updateSloganAsync({
+    //     slogan: '我用Vue'
+    //   })
+    // },
     notify () {
       this.$notify({
         content: `this notify ${Math.random()}`,
@@ -87,8 +87,8 @@ export default {
     //   return this.$store.getters.fullName
     // }
     // ...mapState(['count']),
-    ...mapState(['count', 'biaoyu']),
-    ...mapGetters(['fullName'])
+    // ...mapState(['count', 'biaoyu']),
+    // ...mapGetters(['fullName'])
   }
 }
 </script>
@@ -100,7 +100,6 @@ export default {
   right 0
   top 0
   bottom 0
-  padding-left 50px
 }
 #cover{
   position absolute
