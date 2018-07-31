@@ -3,5 +3,6 @@ export default {
   biaoyu: 'React千秋万代',
   firstName: '三',
   lastName: '张',
-  todos: []
+  todos: [],
+  userInfo: null
 }

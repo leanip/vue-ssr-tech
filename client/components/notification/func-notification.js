@@ -31,7 +31,6 @@ export default {
       }
     },
     clearTimer () {
-      console.log('clear timer', this.timer)
       this.timer && clearTimeout(this.timer)
     },
     afterEnter (el) {

@@ -17,11 +17,23 @@ const handleRequest = req => {
       }
       resolve(data.data)
     })
+      .catch(err => {
+        const resp = err.response
+        if (resp.status === 401) {
+          reject(createError(401, '你得先登录啊'))
+        }
+      })
   })
 }
 
 export default {
   getAllTodos () {
-    return handleRequest(request('/api/todos'))
+    return handleRequest(request.get('/api/todos'))
+  },
+  login (username, password) {
+    return handleRequest(request.post('/user/login', {
+      username,
+      password
+    }))
   }
 }
