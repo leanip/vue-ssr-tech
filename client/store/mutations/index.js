@@ -5,5 +5,8 @@ export default {
   updateSlogan (state, payload) {
     console.log('mutations slogan update: ', payload)
     state.biaoyu = payload.slogan
+  },
+  fillTodos (state, todos) {
+    state.todos = todos
   }
 }

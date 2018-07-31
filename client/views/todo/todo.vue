@@ -31,7 +31,11 @@
 <script>
 import Item from './item.vue'
 import Helpers from './helper.vue'
-let id = 0
+import {
+  mapState,
+  mapActions
+} from 'vuex'
+
 export default {
   metaInfo: {
     title: 'todo page'
@@ -53,19 +57,21 @@ export default {
   props: ['id'],
   data () {
     return {
-      todos: [],
+      // todos: [],
       filter: 'all',
       stats: ['all', 'active', 'completed']
     }
   },
   mounted () {
     // console.log(this.id)
+    this.fetchTodos()
   },
   components: {
     Item,
     Helpers
   },
   computed: {
+    ...mapState(['todos']),
     filteredTodos () {
       if (this.filter === 'all') {
         return this.todos
@@ -75,14 +81,15 @@ export default {
     }
   },
   methods: {
-    addTodo (e) {
-      this.todos.unshift({
-        id: id++,
-        content: e.target.value.trim(),
-        completed: false
-      })
-      e.target.value = ''
-    },
+    ...mapActions(['fetchTodos']),
+    // addTodo (e) {
+    //   this.todos.unshift({
+    //     id: id++,
+    //     content: e.target.value.trim(),
+    //     completed: false
+    //   })
+    //   e.target.value = ''
+    // },
     deleteTodo (id) {
       this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
     },

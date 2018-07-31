@@ -1,3 +1,9 @@
+import model from '../../model/client-model'
+
+const handleError = err => {
+  console.log(err)
+}
+
 export default {
   updateCountAsync (store, data) {
     setTimeout(() => {
@@ -10,5 +16,14 @@ export default {
     setTimeout(() => {
       store.commit('updateSlogan', { slogan })
     }, 1000)
+  },
+  fetchTodos ({ commit }) {
+    model.getAllTodos()
+      .then(data => {
+        commit('fillTodos', data)
+      })
+      .catch(err => {
+        handleError(err)
+      })
   }
 }
