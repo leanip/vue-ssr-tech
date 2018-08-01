@@ -4,5 +4,6 @@ export default {
   firstName: '三',
   lastName: '张',
   todos: [],
-  userInfo: null
+  userInfo: null,
+  loading: false
 }
