@@ -14,7 +14,7 @@
     </p> -->
     <!-- <p><router-link to='/login/exact'>login exact</router-link></p> -->
 
-    <transition name='fade'>
+    <transition name='fade' mode='out-in'>
       <router-view/>
     </transition>
     <!-- <button @click='notify'>click me</button> -->

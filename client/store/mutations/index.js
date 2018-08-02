@@ -3,17 +3,16 @@ export default {
     state.count = num
   },
   updateSlogan (state, payload) {
-    console.log('mutations slogan update: ', payload)
     state.biaoyu = payload.slogan
   },
   fillTodos (state, todos) {
+    console.log('mutations todos: ', todos)
     state.todos = todos
   },
   addTodo (state, todo) {
     state.todos.unshift(todo)
   },
   updateTodo (state, { id, todo }) {
-    console.log('update mutation: ', id, todo)
     state.todos.splice(
       state.todos.findIndex(t => t.id === id),
       1,

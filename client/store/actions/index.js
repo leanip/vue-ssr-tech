@@ -1,4 +1,5 @@
-import model from '../../model/client-model'
+// import model from '../../model/client-model'
+import model from 'model'
 import notify from '../../components/notification/function'
 import bus from '../../util/bus'
 
@@ -26,14 +27,14 @@ export default {
   },
   fetchTodos ({ commit }) {
     commit('startLoading')
-    model.getAllTodos()
+    return model.getAllTodos()
       .then(data => {
-        commit('fillTodos', data)
         commit('endLoading')
+        commit('fillTodos', data)
       })
       .catch(err => {
-        handleError(err)
         commit('endLoading')
+        handleError(err)
       })
   },
   login ({ commit }, {username, password}) {

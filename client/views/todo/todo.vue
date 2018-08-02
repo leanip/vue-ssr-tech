@@ -63,9 +63,17 @@ export default {
       stats: ['all', 'active', 'completed']
     }
   },
+  asyncData ({store}) {
+    store.dispatch('fetchTodos')
+    // return new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     resolve(123)
+    //   }, 1000)
+    // })
+  },
   mounted () {
     // console.log(this.id)
-    this.fetchTodos()
+    // this.fetchTodos()
   },
   components: {
     Item,

@@ -4,8 +4,8 @@ import Vuex from 'vuex'
 import Meta from 'vue-meta'
 
 import App from './app.vue'
-import CreateStore from './store/store'
-import CreateRouter from './config/router'
+import createStore from './store/store'
+import createRouter from './config/router'
 import Notification from './components/notification'
 import Tabs from './components/tabs'
 
@@ -18,8 +18,8 @@ Vue.use(Notification)
 Vue.use(Tabs)
 
 export default () => {
-  const router = new CreateRouter()
-  const store = new CreateStore()
+  const router = createRouter()
+  const store = createStore()
 
   const app = new Vue({
     router,
