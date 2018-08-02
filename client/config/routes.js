@@ -14,7 +14,7 @@ export default [
     //   id: '7890'
     // },
     // props: route => ({ id: route.query.b }), // eslint-disable-line // 传一个方法
-    component: () => import('../views/todo/todo.vue'),
+    component: () => import(/* webpackChunkName: "todo-view" */ '../views/todo/todo.vue'),
     // component: Todo,
     name: 'App',
     beforeEnter (to, from, next) {
@@ -24,7 +24,7 @@ export default [
   },
   {
     path: '/login',
-    component: () => import('../views/login/login.vue')
+    component: () => import(/* webpackChunkName: "login-view" */ '../views/login/login.vue')
     // component: Login
   }
 ]
