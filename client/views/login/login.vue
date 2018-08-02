@@ -14,6 +14,7 @@
       <input
         type="password"
         v-model="password"
+        autocomplete='new-password'
         placeholder="Password"
         class="login-input"
       >
