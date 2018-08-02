@@ -64,16 +64,13 @@ export default {
     }
   },
   asyncData ({store}) {
-    store.dispatch('fetchTodos')
-    // return new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     resolve(123)
-    //   }, 1000)
-    // })
+    return store.dispatch('fetchTodos')
   },
   mounted () {
     // console.log(this.id)
-    // this.fetchTodos()
+    // if (this.todos && this.todos.length < 1) {
+    //   this.fetchTodos()
+    // }
   },
   components: {
     Item,
