@@ -64,13 +64,15 @@ export default {
     }
   },
   asyncData ({store}) {
-    return store.dispatch('fetchTodos')
+    if (store.state.user) {
+      return store.dispatch('fetchTodos')
+    }
+    return Promise.resolve()
   },
   mounted () {
-    // console.log(this.id)
-    // if (this.todos && this.todos.length < 1) {
-    //   this.fetchTodos()
-    // }
+    if (this.todos && this.todos.length < 1) {
+      this.fetchTodos()
+    }
   },
   components: {
     Item,
