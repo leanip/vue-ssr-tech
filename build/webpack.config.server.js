@@ -4,7 +4,7 @@ const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
 const ExtractPlugin = require('extract-text-webpack-plugin')
 // 插件作用：自动生成单独的Json文件，用于服务端渲染时处理一些复杂的逻辑
-const VueServerPlugin = require('vue-server-renderer/server-plugin')
+// const VueServerPlugin = require('vue-server-renderer/server-plugin')
 
 const config = merge(baseConfig, {
   target: 'node',
@@ -43,8 +43,8 @@ const config = merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
       'process.env.VUE_ENV': '"server"' // 服务端渲染，Vue官方建议这么做
-    }),
-    new VueServerPlugin()
+    })
+    // new VueServerPlugin()
   ]
 })
 

@@ -15,13 +15,8 @@ export default [
     // },
     // props: route => ({ id: route.query.b }), // eslint-disable-line // 传一个方法
     component: () => import('../views/todo/todo.vue'),
+    // component: Todo,
     name: 'App',
-    children: [
-      {
-        path: 'test',
-        component: () => import('../views/login/login.vue')
-      }
-    ],
     beforeEnter (to, from, next) {
       // console.log('app routes before enter')
       next()
@@ -30,9 +25,6 @@ export default [
   {
     path: '/login',
     component: () => import('../views/login/login.vue')
-  },
-  {
-    path: '/login/exact',
-    component: () => import('../views/login/login.vue')
+    // component: Login
   }
 ]

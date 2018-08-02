@@ -5,7 +5,8 @@
     "node_modules/**/node_modules",
     ".eslintrc",
     "build/webpack.config.client.js",
-    "public"
+    "public",
+    "server-build"
   ],
   "env": {
     "NODE_ENV": "development"
